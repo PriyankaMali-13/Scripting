@@ -1,0 +1,330 @@
+****************Basics*******************
+//1
+function getEvenOdd(a) {
+	if (a % 2 == 0) {
+		console.log("Even");
+	} else {
+		console.log("Odd");
+	}
+}
+
+getEvenOdd(6);
+
+
+//2
+function getMax(a, b, c) {
+	if (a > b && a > c) {
+		console.log(a);
+	} else if (b > a && b > c) {
+		console.log(b);
+	} else {
+		console.log(c);
+	}
+}
+
+getMax(1, 3, 2);
+getMax(2, 3, 1);
+getMax(3, 1, 2);
+
+//5
+function getStrings(num, s) {
+	var res = s.repeat(num);
+	console.log(res);
+}
+
+getStrings(5, "x");
+getStrings(7, "-");
+
+//3
+var num = parseInt(prompt("Enter a number"));
+myFunction(num);
+
+function myFunction(n) {
+	countHead = 0;
+	countTail = 0;
+	for (i = 0; i < n; i++) {
+		coin = Math.floor(Math.random() * 2);
+		//console.log(coin);
+		if (coin == 1) {
+			countHead++;
+		} else {
+			countTail++;
+		}
+	}
+	document.write("Heads occurs " + countHead + " times.");
+}
+
+
+//4
+var num = parseInt(prompt("Enter a number"));
+myFunction(num);
+
+function myFunction(n) {
+	countHead = 0;
+	countTail = 0;
+	for (i = 0; i < n; i++) {
+		coin = Math.floor(Math.random() * 2);
+		//console.log(coin);
+		if (coin == 1) {
+			countHead++;
+		} else {
+			countTail++;
+		}
+	}
+	document.write(countHead / n);
+}
+
+//6
+myFunction();
+
+function myFunction() {
+	count = 0;
+	while (die != 6) {
+		var die = Math.floor(Math.random() * 6 + 1);
+		//console.log(die);
+		count++;
+	}
+	document.write(count);
+}
+
+//7
+myFunction();
+
+function myFunction() {
+	var num = Math.floor(Math.random() * 2);
+	if (num == 1) {
+		document.write("Have a Good Day.");
+	} else {
+		document.write("Have a Bad Day.");
+	}
+}
+
+
+*************Basic JS Part 1*************
+
+//1
+var fourArray = Array.from(
+	{
+		length: 4,
+	},
+	() => Math.floor(Math.random() * 5)
+);
+document.write(fourArray);
+
+
+//2
+var fourArray = [];
+for (var i = 0, j = 100; i < j; i++) {
+	fourArray.push(Math.round(Math.random() * j));
+}
+
+document.write(fourArray);
+
+//3
+function getArray(string) {
+	var result = string.map((i) => Number(i));
+	console.log(result);
+}
+
+var s = ["1.2", "3.4", "5.6", "9"];
+var num = getArray(s);
+
+
+*************Basic JS Part 2*************
+
+//6
+function getOutput(a, b, c) {
+	return (a + b) / c;
+}
+
+res = getOutput(1, -1, 0); // NaN
+
+console.log(res);
+
+//res = getOutput(1, 1, 0); ans: infinity
+//res = getOutput(-1, -1, 0); ans: -infinity
+
+
+//8
+function getEvenOdd(number) {
+	res = number % 2 == 0 ? "True" : "False";
+	console.log(res);
+}
+
+getEvenOdd(9);
+
+******* 8 **********
+//1
+document.write("Hello World");
+
+//2
+var n = prompt("Enter name");
+document.write("Hey! " + n + " Welcome");
+
+//3
+var user = prompt("Enter name");
+document.write("Hey! Welcome Alice and Bob");
+
+//4
+var n = parseInt(prompt("Enter the number"));
+var add = 0;
+for (i = 1; i <= n; i++) {
+	add += i;
+}
+document.write(add);
+
+//5
+var n = parseInt(prompt("Enter the number"));
+var add = 0;
+for (i = 1; i <= n; i++) {
+	if (i % 3 == 0 || i % 5 == 0) {
+		add += i;
+	}
+}
+document.write(add);
+
+//6
+var n = parseInt(prompt("Enter the number"));
+var choice = prompt("Enter ur choice");
+var mul = 1;
+var add = 0;
+for (i = 1; i <= n; i++) {
+	if (choice == "*") {
+		mul *= i;
+	} else {
+		add += i;
+	}
+}
+if (choice == "*") {
+	document.write(mul);
+} else {
+	document.write(add);
+}
+
+//7
+for (i = 1; i <= 12; i++) {
+	for (j = 1; j <= 10; j++) {
+		document.write(i * j + " ");
+	}
+	document.write("<br>");
+}
+
+***************Javascript Assignments****************
+
+//1
+//html code
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<link rel="stylesheet" href="style.css" />
+		<title>Fahrenheit to Celsius</title>
+	</head>
+
+	<body>
+		<input
+			type="text"
+			name="name"
+			id="text-temp"
+			placeholder="Enter temperature in Fahrenheit"
+		/>
+		<br /><br /><br />
+		<input type="button" id="mybutton" value="Convert" onclick="calc()" />
+		<br /><br /><br />
+		<input
+			type="text"
+			name=""
+			id="text-c"
+			placeholder="Answer in Celsius"
+		/>
+		<br /><br />
+		<div id="message"></div>
+		<script src="script.js"></script>
+	</body>
+</html>
+
+
+//css code
+#text-temp,
+#text-c {
+	background: chartreuse;
+	color: black;
+	width: 150px;
+	padding: 10px;
+	margin: 5px auto;
+}
+
+#submit {
+	background: #1909f3;
+	color: white;
+	padding: 10px;
+	margin-left: 50px;
+	text-align: center;
+}
+
+//js code
+function calc() {
+	input = document.getElementById("text-temp").value;
+	message = document.getElementById("message");
+	output = document.getElementById("text-c");
+	if (input == "") {
+		message.innerHTML = "Please enter the temperature";
+		input.innerHTML = "";
+		return false;
+	} else if (isNaN(input)) {
+		message.innerHTML = "Please enter integer value";
+		return false;
+	} else {
+		//(32°F − 32) × 5/9 = 0°C
+		var result = (input - 32) * (5 / 9);
+		output.value = result + "*C";
+		message.innerHTML = "";
+	}
+}
+
+
+//2
+//js code
+var inputArray = [];
+for (i = 1; i <= 3; i++) {
+	input = parseInt(prompt("Enter the number"));
+	if (isNaN(input) || input < 1 || input > 30) {
+		alert("Please enter valid input");
+		if ((window.alert = () => true)) {
+			input = parseInt(prompt("Enter the number"));
+			inputArray.push(input);
+		}
+	} else {
+		inputArray.push(input);
+	}
+}
+for (j = 0; j < inputArray.length; j++) {
+	var a = inputArray[j];
+	document.write("*".repeat(a));
+	document.write("<br>");
+}
+
+//3
+var rows = prompt("Enter the number of rows you want?");
+var cols = prompt("Enter the number of columns you want?");
+
+createTable(rows, cols);
+function createTable(rows, cols) {
+	var j = 1;
+
+	var output =
+		"<table border='1' width='500' cellspacing='0'cellpadding='5'>";
+	for (i = 1; i <= rows; i++) {
+		output = output + "<tr>";
+		while (j <= cols) {
+			output = output + "<td>" + "row " + i + " " + "col " + j + "</td>";
+			j = j + 1;
+		}
+		output = output + "</tr>";
+		j = 1;
+	}
+	output = output + "</table>";
+	document.write(output);
+}
+
+
+//4

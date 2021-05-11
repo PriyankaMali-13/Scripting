@@ -1,0 +1,65 @@
+//1
+function double(x) {
+	var doubleResult = x * 2;
+	return doubleResult;
+}
+
+function square(x) {
+	var squareResult = x * x;
+	return squareResult;
+}
+
+function composedValue(a, b, c) {
+	var value = b(c);
+	var ans = a(value);
+	return ans;
+}
+g = composedValue(square, double, 5);
+document.write(g);
+
+//2
+function double(x) {
+	var doubleResult = x * 2;
+	return doubleResult;
+}
+
+function square(x) {
+	var squareResult = x * x;
+	return squareResult;
+}
+
+function composedValue(a, b) {
+    function z(m){
+        val1 = b(m);
+        val2 = a(val1);
+        return val2;
+    }
+    return z;
+}
+	
+f1 = composedValue(square,double);
+document.write(f1(10));
+
+//4
+function map(square, a) {
+	var result = [];
+	for (var i = 0; i <= a.length - 1; i++) result[i] = square(a[i]);
+	return result;
+}
+
+var square = function (x) {
+	return x * x;
+};
+
+var squareroot = function (x) {
+	num_sqrt = x ** 0.5;
+	return num_sqrt;
+};
+
+var value = [1, 2, 3, 4, 5];
+var final = map(square, value);
+console.log(final);
+
+var sqrt = map(squareroot, final);
+console.log(sqrt);
+

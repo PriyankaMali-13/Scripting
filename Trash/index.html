@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<link rel="stylesheet" href="style.css" />
+		<title>Fahrenheit to Celsius</title>
+	</head>
+
+	<body>
+		<input
+			type="text"
+			id="result-box"
+			name="name"
+			placeholder="Result would be displayed here"
+		/>
+		<br /><br /><br />
+		<input
+			type="button"
+			id="result-button"
+			value="Click me for choice"
+			onclick="choice()"
+		/>
+		<br /><br /><br />
+		<div id="mychoice">
+			<a href="#" id="add" onclick="run()">Addition</a>
+			<a href="#" id="sub" onclick="run()">Subtraction</a>
+			<a href="#" id="mul" onclick="run()">Multiplication</a>
+			<a href="#" id="div" onclick="run()">Division</a>
+			<a href="#" id="expo" onclick="run()">Exponent</a>
+			<a href="#" id="mean" onclick="run()">Mean</a>
+			<a href="#" id="quit" onclick="runquit()">Quit</a>
+		</div>
+		<script src="script.js"></script>
+	</body>
+</html>

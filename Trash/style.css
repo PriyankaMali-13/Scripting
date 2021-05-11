@@ -1,0 +1,21 @@
+#result-box {
+	background: chartreuse;
+	color: black;
+	padding: 10px;
+	margin: 10px auto;
+	border: 2px solid black;
+	width: 350px;
+	text-align: center;
+}
+
+#result-button {
+	background: rgb(9, 23, 221);
+	color: white;
+	padding: 10px;
+	margin-left: 100px;
+	border: 2px solid black;
+}
+
+#mychoice {
+	visibility: hidden;
+}

@@ -1,0 +1,44 @@
+//1
+const sum = (a, b) => a + b;
+const first = new Promise((resolve, reject) => {
+	const a = 1;
+	if (a === 1) resolve(a);
+	else reject(a);
+});
+
+const second = new Promise((resolve, reject) => {
+	const b = 3;
+	if (b === 3) resolve(b);
+	else reject(b);
+});
+
+const third = new Promise((resolve, reject) => {
+	const value = sum(1,3);
+	if (value === 4) resolve(value);
+	else reject(value);
+});
+
+const p = Promise.all([first, second, third]);
+p
+	.then((success) => console.log("sucess: ", success))
+	.catch((error) => console.log("error: ", error));
+
+
+//answer 
+> "sucess: " Array [1, 3, 4]
+
+
+//3
+interface Printable {
+	(name?: string, id?: number, area?: number): void;
+}
+
+function printAll(name: string, id: number, area: number): void {
+	console.log(name, id, area);
+}
+
+let employee: Printable = printAll;
+employee("Priyanka", 1234);
+
+let circle: Printable = printAll;
+circle(987);
